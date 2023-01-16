@@ -7,4 +7,6 @@ The site also has a contact form where user can send feedback.
 
 Currently the ordering is not possible, but in the next update there will be a way to put items in the shopping cart and take the transaction all the way to the payment process. 
 
+The site has responsivity and works in mobile. 
+
 Techniques used in this project are: HTML, CSS, Javascript, PHP.
