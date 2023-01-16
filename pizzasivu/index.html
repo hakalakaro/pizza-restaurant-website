@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kim's Corner - Fullstack project</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <!-- Header of the site-->
+    <div class="header">
+
+        <h1>
+        <a style="text-decoration: none; color: white;" href="#">Kim's Corner</a>
+        </h1>
+           
+    </div>
+
+    <!-- Nav links-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color: white;" onclick="homeFunction()">
+            <i class="fa fa-home" style="font-size:24px;"></i>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"style="color: white;" onclick="menuFunction()">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;" onclick="dealsFunction()">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;" onclick="orderNow()">Order Now</a>
+                    </li>
+                </ul>
+
+                <!-- Login form in navbar-->
+                <div class="dropdown" id="dropdown1" style="margin-right: 10px;">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" style="background-color: #EDBB99; color: white; ">
+                    Login <i class='fa fa-lock'></i>
+                </button>
+                <form class="dropdown-menu p-4" action="authenticate.php" method="post" style="background-color: #F6DDCC;">
+                    <label for="formheading2" name="formheading2" class="form-label" style="width: 200px;"><b>Login</b></label>
+                    <div class="mb-3">
+                        <label for="username" name="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" name="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                            <label class="form-check-label" for="dropdownCheck2">
+                                Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </form>
+            </div>
+                <!-- Register form in nav bar-->
+                <div class="dropdown" id="dropdown3" style="float: left; margin-right: 10px;">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" style="background-color: #EDBB99; color: white;">
+                    Register <i class="fa fa-user" aria-hidden="true"></i>
+                </button>
+                <form class="dropdown-menu p-4" id="registerform" method="post" action="createacc.php" style="background-color: #F6DDCC;">
+                    <label for="formheading" name="formheading" class="form-label" style="width: 200px;"><b>Create</b> <b>Account</b></label>
+                    <div class="mb-3">
+                        <label for="newuser" name="newuser" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="newuser" id="newuser" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newpassword" name="newpassword" class="form-label">Password</label>
+                        <input type="text" class="form-control" name="newpassword" id="newpassword" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newemail" name="newemail" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="newemail" id="newemail" placeholder="Email" required>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Register">
+                </form>
+            </div>
+                <!-- Nav search-->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="searchinput" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn" type="submit" style="background-color: #EDBB99; color: white;margin-right: 5px;">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reviews panel on the left side -->
+    <div class="row">
+        <div class="aside col-3 col-s-3" id="left">
+            <hr size="4" width="100%" color="white" style="opacity: 1.0;">
+            
+            <h2 style="margin-top: 35px;">Reviews</h2>
+            
+            <p style="margin-top: 35px;"><q>Best pizza in town!</q></p>
+            <h3>*****</h3>
+            
+            <p style="margin-top: 35px;"><q>Must see when visiting Helsinki.</q></p>
+            <h3>*****</h3>
+            
+            <p style="margin-top: 35px;"><q>Friendly customer service.</q></p>
+            <h3>*****</h3>
+            
+            <p style="margin-top: 35px;"><q>Kim knows his business.</q></p>
+            <h3>*****</h3>
+                                   
+            <button class="btn" style="margin-top: 35px; border-radius: 6px; border-color: transparent; background-color: #EDBB99; color: white;">More</button>
+                        
+            <hr size="4" width="100%" color="white" style="opacity: 1.0; margin-top: 35px;">
+        </div>
+        <!-- Middle div-->
+        <div class="col-6 col-s-9" id="middle">
+                                    
+            <h1>Kim's Corner</h1>
+            <p>Established since 2006 in Helsinki, Finland. Pizza made from the finest ingredients with years of experience. </p>
+
+        </div>
+        <!-- Menu div is hidden until it's opened with a click from navbar-->
+        <div class="col-6 col-s-9" id="menu">
+            <h1 style="margin-top: 30px;">Our Menu</h1>
+            
+            <h2 style="margin-top: 35px;">Pizzas</h2>
+            
+            <p>Margharita 10 €</p>
+            
+            <p>Americana 11.5€</p>
+            
+            <p>Tropicana 11€</p>
+            
+            <p>Mexicana 12€</p>
+            
+            <p>Opera Special 14€</p>
+           
+            <h2 style="margin-top:35px;">Drinks</h2>
+            
+            <p>Coca Cola 0.5L 3€</p>
+          
+            <p>Heineken 0.5L 4.5€</p>
+          
+            <p>Red Wine 12CL 6.5€</p>
+        </div>
+
+        <!-- Deals div is hidden until it's opened with a click from navbar-->
+        <div class="col-6 col-s-9" id="deals">
+            
+            <h1 style="margin-top: 30px;">Current deals</h1>
+            
+            <p>Buy two pizzas, get third for free.</p>
+            
+            <p>Margharita pizza 9€</p>
+            
+            <p>Americana pizza 10€</p>
+            
+            <p>0,5L softdrink included in every order</p>
+            
+            <p>-15% takeaway</p>
+
+            <p>-15% takeaway</p>
+
+            <p>-15% takeaway</p>
+
+            <p style="padding-bottom: 105px;">-15% takeaway</p>
+        
+        </div>
+        <!-- Right side div-->
+        
+            <div class="aside col-3 col-s-12" id="right" >
+                <hr size="4" width="100%" color="white" style="opacity: 1.0;">
+                
+                <h2 style="margin-top: 35px;">What?</h2>
+                <p>Kim's Corner is a pizza restaurant that uses only the finest ingredients to provide You with a spectacular dining experience.</p>
+                
+                <h2 style="margin-top: 35px;">Where?</h2>
+                <p>We are located in Punavuori, Helsinki.</p>
+                
+                <h2 style="margin-top: 35px;">How?</h2>
+                <p>With Kim's, everything is possible.</p>
+                <p>Try it yourself!</p>
+
+                <h2 style="margin-top: 35px;">When?</h2>
+                <p>We are open Monday-Saturday 12.00 - 22.00</p>
+                
+
+                <hr size="4" width="100%" color="white" style="opacity: 1.0; margin-top: 60px;">
+                
+                <h2 style="margin-top: 35px;">Contact us</h2>
+                <p>Contact us using our contact form below.</p>
+
+                <!-- Contact form on the right side-->
+                <div class="dropdown" id="dropdown2">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" style="background-color: #EDBB99; color: white; border-color: transparent;">
+                        <i class='fas fa-envelope'></i>
+                    </button>
+                    <form class="dropdown-menu p-4" id="messageform" style="background-color: #F6DDCC;">
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormfname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="exampleDropdownFormfname" placeholder="First name.." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormlname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control required" id="exampleDropdownFormlname" placeholder="Last name.." required>
+                        </div>
+                        <div class="mb-3">
+
+                            <label for="exampleDropdownFormemail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleDropdownFormemail" placeholder="Email.." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormphone" class="form-label">Phone number</label>
+                            <input type="tel" class="form-control" id="exampleDropdownFormnumber" placeholder="Phone number.." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormdate" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="exampleDropdownFormdate"  required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleDropdownFormmessage" class="form-label">*Message</label>
+                            <textarea id="message" name="message" class="form-check form-control" required></textarea>
+                        </div>
+
+                        <input type="submit" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    <!-- footer of the site-->
+        <div class="footer">
+            <p>© Kim's Corner est. 2006</p>
+        </div>
+
+</body>
+</html>

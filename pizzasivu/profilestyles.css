@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background-image: url("./images/panel-picture.jpg");
+    background-repeat: repeat;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    background-image: url("./images/panel-picture.jpg");
+    background-repeat: repeat;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.navbar {
+    background: linear-gradient(to right, #E59866, #FBEEE6);
+}
+
+.header {
+    background-image: url("./images/panel-picture.jpg");
+    background-repeat: repeat;
+    color: white;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#dropdown1 {
+    width: fit-content;
+    float: right;
+}
+
+.topnav {
+    float: left;
+}
+
+#middle {
+    background-image: url("./images/pizza-image.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    display: none;
+}
+#middle p {
+    padding-bottom: 40px;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#middle h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 610px;
+    padding-left: 20px;
+    color: white;
+}
+
+#homepage {
+    background-image: url("./images/pizza-image.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+}
+#homepage p {
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    
+}
+
+#homepage h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 650px;
+    padding-left: 20px;
+    color: white;
+    
+}
+#profilepage {
+    background-image: url("./images/profile-background.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+}
+#orderpage {
+    background-image: url("./images/menu-background.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+#menu {
+    height: 100%;
+    max-width: 100%;
+    color: white;
+    display: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("./images/menu-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#menu p {
+    margin-top: 35px;
+}
+
+#deals {
+    background-image: url("./images/deals-image.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    color: white;
+    display: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#deals p {
+    margin-top: 40px;
+}
+
+.aside {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+    background-image: url("./images/panel-picture.jpg");
+    background-repeat: repeat;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    #right {
+        font-size: 0.75em;
+    }
+
+    #left {
+        font-size: 0.75em;
+    }
+
+    #middle p {
+        font-size: 0.75em;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #middle h1 {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
